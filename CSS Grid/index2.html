@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      display: grid;
+
+      /* 重複 */
+      /* grid-template-columns: 1fr 1fr 1fr; */
+      grid-template-columns: repeat(3, 1fr);
+
+      /* grid間距 */
+      gap: 1rem;
+
+      /* auto列高 */
+      /* grid-auto-rows: 100px; */
+
+      /* 如果小於100px就以100px為高，如果超過就用auto來設置高度 */
+      grid-auto-rows: minmax(100px, auto);
+    }
+
+    .wrapper>div {
+      background-color: #eeeeee;
+      padding: 1rem;
+    }
+
+    .wrapper>div:nth-child(odd) {
+      background-color: #c5c5c5;
+    }
+
+    .nested{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1rem;
+      grid-auto-rows: 70px;
+    }
+
+    .nested>div{
+      border:1px solid #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, quis totam vero in voluptatem tenetur consequatur
+      eligendi commodi quasi dolor minus, et recusandae tempora quos! Ipsam quisquam deserunt dolores quidem sed fugiat
+      tempore enim voluptas rerum nesciunt magni at, voluptate quibusdam dicta, ratione eos vero ea eius reiciendis
+      suscipit, iste maxime cum quasi facilis. Consequatur, animi architecto asperiores debitis tempora quasi sunt.
+      Doloremque deleniti iusto iste tempore dolorum ipsam totam, magni perspiciatis, labore vitae facilis eligendi! Et
+      dolorum, quo consequuntur repudiandae similique totam modi voluptates explicabo tempore repellendus praesentium,
+      officiis tempora distinctio molestiae delectus fugiat deserunt eos ipsam! Iusto, non.</div>
+    <div class="nested">
+      <div>lorem10</div>
+      <div>lorem10</div>
+      <div>lorem10</div>
+      <div>lorem10</div>
+      <div>lorem10</div>
+      <div>lorem10</div>
+      <div>lorem10</div>
+      <div>lorem10</div>
+    </div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <div>Lorem ipsum dolor sit amet.</div>
+  </div>
+</body>
+
+</html>

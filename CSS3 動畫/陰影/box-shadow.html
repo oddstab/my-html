@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: rgb(168, 168, 168);
+    }
+
+    #box1 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      margin: 50px auto;
+
+      /*水平 垂直 模糊*/
+      /* box-shadow:
+        1px 1px 3px #f00,
+        2px 2px 3px orange,
+        3px 3px 3px yellow,
+        4px 4px 3px green; */
+
+      /* ...模糊 外延伸 */
+      /* box-shadow: 0 0 3px 10px green; */
+
+      /* ... inset-內置陰影 */
+      /* box-shadow: 10px 10px 5px inset; */
+    }
+
+    #box2 {
+      width: 100px;
+      height: 40px;
+      background-color: rgb(121, 224, 121);
+      margin: 50px auto;
+      line-height: 40px;
+      color: rgb(235, 235, 235);
+      font-weight: bold;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px;
+    }
+
+    #box2:hover {
+      cursor: pointer;
+      box-shadow: 1px 1px 5px inset;
+    }
+
+    #box3 {
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      margin: 160px auto;
+      /* background-color: #f00; */
+      box-shadow:
+        0 0 0px 10px red,
+        0 0 0px 20px orange,
+        0 0 0px 30px yellow,
+        0 0 0px 40px green,
+        0 0 0px 50px blue,
+        0 0 0px 60px purple;
+      transition: .5s;
+    }
+
+    #box3:hover {
+      box-shadow:
+        0 0 0px 10px purple,
+        0 0 0px 20px blue,
+        0 0 0px 30px green,
+        0 0 0px 40px yellow,
+        0 0 0px 50px orange,
+        0 0 0px 60px red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box1"></div>
+  <div id="box2">按鈕</div>
+  <div id="box3"></div>
+</body>
+
+</html>

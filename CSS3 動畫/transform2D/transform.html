@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: rgb(187, 182, 176);
+    }
+
+    #box {
+      width: 200px;
+      height: 200px;
+      margin: 100px;
+      border: 1px solid #000;
+      transition: 1s;
+    }
+
+    #box:hover {
+      /*水平和垂直移動*/
+      transform: translate(200px);
+      transform: translate(200px, 50px);
+    }
+
+    #box2 {
+      width: 250px;
+      height: 500px;
+      border: 2px solid rgb(192, 118, 118);
+      margin: 120px auto;
+      transition: .5s;
+      line-height: 500px;
+      text-align: center;
+      font-size: 50px;
+      color: aliceblue;
+    }
+
+    #box2:hover {
+      /*改y軸*/
+      /* box-shadow: 0px 0px 5px #ccc;
+      transform: translate(0, -20px) */
+
+      /* 旋轉 
+          只支持一個參數
+      */
+      /* transform: rotate(720deg); */
+
+      /* 縮放 */
+      /* transform: scale(0.5); */
+      /* 水平垂直 */
+      /* transform: scale(0.5,1.9); */
+
+      /* 傾斜 */
+      transform: skew(40deg);
+    }
+
+    button {
+      border: 1px solid rgb(157, 82, 228);
+      background-color: rgb(163, 86, 235);
+      border-radius: 5px;
+      color: aliceblue;
+      transition: .2s;
+      box-shadow: 0 2px 2px #000;
+      padding: 5px 15px;
+      outline: none;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: rgb(171, 99, 238);
+    }
+
+    button:active {
+      transform: scale(.95);
+    }
+  </style>
+</head>
+
+<body>
+  <button>
+    按我
+  </button>
+  <!-- <div id="box"></div> -->
+  <div id="box2">
+    呵呵嘿嘿
+  </div>
+</body>
+
+</html>

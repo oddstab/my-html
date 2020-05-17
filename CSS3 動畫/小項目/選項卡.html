@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      display: inline-flex;
+      position: relative;
+    }
+
+    #box>div {
+      /* border: 1px solid #000; */
+      padding: 10px 20px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    #box>div:nth-child(1) {
+      background: #63a7f2;
+      border-radius: 10px 0 0 0;
+    }
+
+    #box>div:nth-child(2) {
+      background: #009764;
+    }
+
+    #box>div:nth-child(3) {
+      background: #da1941;
+    }
+
+    #box>div:nth-child(4) {
+      background: #eab719;
+      border-radius: 0 10px 0 0;
+    }
+
+    #box>div>div {
+      border-radius: 0 0 10px 10px;
+      position: absolute;
+      box-sizing: border-box;
+      top: 41.25px;
+      left: 0;
+      width: 288px;
+      height: 80px;
+      padding: 20px;
+      display: none;
+    }
+
+    #box>div:hover div {
+      display: block;
+    }
+
+    #box>div:nth-child(1)>div {
+      background: linear-gradient(50deg, #63a7f2, #63a7f2);
+      display: block;
+    }
+
+    #box>div:nth-child(2)>div {
+      background: linear-gradient(50deg, #009764, #009764);
+    }
+
+    #box>div:nth-child(3)>div {
+      background: linear-gradient(50deg, #da1941, #da1941);
+    }
+
+    #box>div:nth-child(4)>div {
+      background: linear-gradient(50deg, #eab719, #eab719);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <div>
+      限期
+      <div>
+        <span>$555</span>
+        <button>立即購買</button>
+      </div>
+    </div>
+    <div>
+      永久
+      <div>
+        <span>$123</span>
+        <button>立即購買</button>
+      </div>
+    </div>
+    <div>
+      組合
+      <div>
+        <span>$423</span>
+        <button>立即購買</button>
+      </div>
+    </div>
+    <div>
+      會員
+      <div>
+        <span>$645</span>
+        <button>立即購買</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
