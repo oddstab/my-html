@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/glide/glide.core.min.css">
+    <link rel="stylesheet" href="libs/glide/glide.theme.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- 頂部 -->
     <header>
         <div class="logo">峰華科技</div>
         <nav>
@@ -19,9 +23,73 @@
             <a href="#">服務流程</a>
             <a href="#">團隊介紹</a>
             <a href="#">公司動態</a>
+            <i class="fa fa-search"></i>
         </nav>
+
+        <div class="burger">
+            <div class="budger-line-1"></div>
+            <div class="budger-line-2"></div>
+            <div class="budger-line-3"></div>
+        </div>
     </header>
 
+    <!-- 輪播圖 -->
+    <div class="glide">
+
+        <div class="glide__track" data-glide-el="track">
+            <div class="glide__slides">
+
+                <div class="glide__slide">
+                    <div class="slide_caption">
+                        <h1>用創新點綴人生，讓科技融入理想。</h1>
+                        <h3>科技創新大平台，智慧生活新引擎。依靠科技進步推進經濟跨越式發展。用創新點綴人生，讓科技融入理想。</h3>
+                    </div>
+                    <button class="explore-btn">探索更多</button>
+                    <div class="backdrop"></div>
+                    <img src="./images/MINARI - ♡ (78250935) .jpg" alt="">
+                </div>
+
+                <div class="glide__slide">
+                    <div class="slide_caption">
+                        <h1>用創新點綴人生，讓科技融入理想。</h1>
+                        <h3>科技創新大平台，智慧生活新引擎。依靠科技進步推進經濟跨越式發展。用創新點綴人生，讓科技融入理想。</h3>
+                    </div>
+                    <button class="explore-btn">探索更多</button>
+                    <div class="backdrop"></div>
+                    <img src="./images/はなこ - 39 (71915593) .png" alt="">
+                </div>
+
+                <div class="glide__slide">
+                    <div class="slide_caption">
+                        <h1>科技改變世界</h1>
+                        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita dolore voluptate
+                            accusantium nobis dicta quae doloremque doloribus at! Quaerat soluta placeat fugit
+                            exercitationem quas omnis error voluptates, qui necessitatibus vero.</h3>
+                    </div>
+                    <button class="explore-btn">探索更多</button>
+                    <div class="backdrop"></div>
+                    <img src="./images/はなこ - この声が聞こえてるかな (73785451) .png" alt="">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 輪播切換按鈕 -->
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-el="<">
+                &lt;
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-el=">">
+                &gt;
+            </button>
+        </div>
+
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide_bullet" data-glide-el="=0"></button>
+            <button class="glide_bullet" data-glide-el="=1"></button>
+        </div>
+    </div>
+    <script src="libs/glide/glide.min.js"></script>
     <script src="index.js"></script>
 </body>
 

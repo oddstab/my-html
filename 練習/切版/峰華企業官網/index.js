@@ -1,1 +1,2 @@
-//# sourceMappingURL=index.js.map
+const glide = new Glide(".glide");
+glide.mount();

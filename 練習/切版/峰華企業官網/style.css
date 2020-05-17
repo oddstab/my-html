@@ -1,1 +1,53 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  width: 100vw;
+  height: 80px;
+  display: -ms-grid;
+  display: grid;
+  padding: 0 40px;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 200;
+}
+
+header nav {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+header nav i {
+  color: #e7e9ec;
+}
+
+header nav a {
+  color: #e7e9ec;
+  text-decoration: none;
+  margin: 0 24px;
+}
+
+header .burger {
+  display: none;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #e7e9ec;
+}
+/*# sourceMappingURL=style.css.map */
