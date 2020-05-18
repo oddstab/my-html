@@ -102,6 +102,10 @@ header {
         min-width: 80vw;
         text-align: left;
     }
+
+    & > * {
+        opacity: 0;
+    }
 }
 
 .backdrop {
@@ -123,4 +127,74 @@ header {
     cursor: pointer;
     color: $text-color-lightest;
     font-size: 18px;
+}
+
+// 內容區域
+// 通用樣式
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    display: grid;
+    justify-items: center;
+    max-width: 1180px;
+    padding: 0 80px;
+}
+
+.title-about {
+    font-size: 34px;
+    color: $text-color-darker;
+
+    // 關於我們底下的線
+    &::after {
+        content: "";
+        display: block;
+        width: 80%;
+        height: 4px;
+        background: $primary-color;
+        margin: 14px;
+    }
+}
+
+.intro {
+    margin: 28px 0 60px 0;
+    font-size: 18px;
+    color: $text-color-dark-gray;
+}
+
+// 關於我們
+.about-us {
+    padding-bottom: 32px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 126px);
+    column-gap: 5vw;
+    // row-gap: 5vw;
+}
+
+.feature {
+    display: grid;
+    grid-template-areas:
+        "icon title "
+        "icon content";
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 1fr 3fr;
+
+    i.fa {
+        grid-area: icon;
+        font-size: 34px;
+        color: $primary-color;
+    }
+}
+
+.feature-title{
+    grid-area: title;
+    font-size: 18px;
+    color: $text-color-darker;
 }
