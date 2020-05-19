@@ -135,6 +135,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    // 記得要以column的方式對齊
+    flex-direction: column;
 }
 
 section {
@@ -144,11 +147,25 @@ section {
     padding: 0 80px;
 }
 
-.title-about {
+// .section-bg {
+//     position: relative;
+// }
+
+// .section-bg::after {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     background-color: #f9fbfb;
+//     width: 100vw;
+//     height: 100%;
+//     z-index: -1;
+// }
+
+.title {
     font-size: 34px;
     color: $text-color-darker;
 
-    // 關於我們底下的線
+    // 底下的線
     &::after {
         content: "";
         display: block;
@@ -167,34 +184,88 @@ section {
 
 // 關於我們
 .about-us {
-    padding-bottom: 32px;
+    padding-bottom: 85px;
 }
 
 .features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 126px);
+    grid-template-rows: repeat(2, 148px);
     column-gap: 5vw;
-    // row-gap: 5vw;
+    row-gap: 5vw;
 }
 
 .feature {
     display: grid;
     grid-template-areas:
-        "icon title "
+        "icon title"
         "icon content";
     grid-template-columns: 60px 1fr;
     grid-template-rows: 1fr 3fr;
+    column-gap: 1vw;
 
-    i.fa {
+    img.logo {
         grid-area: icon;
         font-size: 34px;
         color: $primary-color;
     }
 }
 
-.feature-title{
+.feature-title {
     grid-area: title;
     font-size: 18px;
     color: $text-color-darker;
+}
+
+.feature-content {
+    grid-area: content;
+    color: $text-color-gray;
+    margin-top: 8px;
+}
+
+// 成功案例
+.showcases {
+    max-width: unset;
+    padding: 0;
+    padding-top: 72px;
+
+    .cases {
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    // 圖片
+    .case-item {
+        width: 25vw;
+        height: 20vw;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.filter-btns {
+    margin-top: 18px;
+    margin-bottom: 38px;
+}
+
+.filter-btn {
+    margin: 0 7px;
+    background-color: $secondary-color;
+    border: 0;
+    color: $text-color-dark-gray;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+    outline: none;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: $primary-color;
+    color: #fff;
 }
