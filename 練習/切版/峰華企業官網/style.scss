@@ -13,6 +13,7 @@ $backdrop-color: rgba(42, 42, 42, 0.192);
     padding: 0;
     box-sizing: border-box;
     font-family: 微軟正黑體;
+    font-size: 14px;
 }
 
 img {
@@ -132,6 +133,7 @@ header {
 // 內容區域
 // 通用樣式
 .content-wrapper {
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,20 +148,6 @@ section {
     max-width: 1180px;
     padding: 0 80px;
 }
-
-// .section-bg {
-//     position: relative;
-// }
-
-// .section-bg::after {
-//     content: "";
-//     display: block;
-//     position: absolute;
-//     background-color: #f9fbfb;
-//     width: 100vw;
-//     height: 100%;
-//     z-index: -1;
-// }
 
 .title {
     font-size: 34px;
@@ -184,7 +172,7 @@ section {
 
 // 關於我們
 .about-us {
-    padding-bottom: 85px;
+    padding-bottom: 23vh;
 }
 
 .features {
@@ -225,13 +213,13 @@ section {
 
 // 成功案例
 .showcases {
-    max-width: unset;
+    max-width: 100%;
     padding: 0;
     padding-top: 72px;
+    overflow: hidden;
 
     .cases {
         width: 100vw;
-        max-width: 100%;
     }
 
     // 圖片
@@ -268,4 +256,245 @@ section {
 .filter-btn:hover {
     background-color: $primary-color;
     color: #fff;
+}
+
+// 服務流程
+.service {
+    padding: 131px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: 38px;
+    row-gap: 34px;
+}
+
+.service-item {
+    display: grid;
+    grid-template-areas:
+        "icon title"
+        "icon content";
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 1fr 3fr;
+    padding: 24px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.06);
+
+    img {
+        grid-area: icon;
+        width: 42px;
+    }
+
+    .service-title {
+        grid-area: title;
+        color: $text-color-darker;
+        font-size: 24px;
+    }
+
+    .service-content {
+        grid-area: content;
+        color: $text-color-gray;
+        line-height: 30px;
+        font-size: 16px;
+        margin-top: 8px;
+    }
+}
+
+// 團隊介紹
+.team-intro {
+    margin-top: 48px;
+    padding-top: 62px;
+    padding-bottom: 52px;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+    margin-top: 86px;
+}
+
+.team-member {
+    background-color: #fff;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-bottom: 28px;
+
+    transition: 0.4s;
+
+    display: grid;
+    justify-items: center;
+
+    .name {
+        margin-top: 18px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .job {
+        color: $text-color-dark-gray;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-20px) scale(1.05);
+        box-shadow: 0 0 36px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.profile-img {
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 308px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.social-links {
+    list-style: none;
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    justify-content: space-around;
+
+    li {
+        padding: 1rem;
+    }
+}
+
+// 數據部分
+.data-section {
+    min-width: 100%;
+    width: 100vw;
+    height: 255px;
+    background-image: url("images/WsMan\ -\ 0505\ \(81307868\)\ .png");
+    background-size: cover;
+    background-position: bottom;
+
+    display: grid;
+
+    // 最小自動調整，最大不超過220px
+    // minmax(auto,220px);
+    grid-template-columns: repeat(4, minmax(auto, 220px));
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $backdrop-color;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+.data-piece {
+    width: 250px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    color: #fff;
+    text-shadow: 0 0 0.2rem #000;
+
+    //要設置z-index就必須設置定位
+    position: relative;
+    z-index: 40;
+
+    & > i.fa {
+        font-size: 44px;
+    }
+
+    .num {
+        margin-top: 7px;
+        font-size: 41px;
+        font-weight: 600;
+    }
+
+    .data-desc {
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+// 公司動態
+.company-activities {
+    margin-top: 88px;
+}
+
+.activities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+}
+
+.activity {
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    transition: 0.4s;
+
+    &:hover {
+        transform: translateY(-20px) scale(1.05);
+        box-shadow: 0 0 36px rgba(0, 0, 0, 0.1);
+    }
+
+    .meta {
+        margin-top: 20px;
+        margin-bottom: 12px;
+        color: $text-color-light-gray;
+        font-size: 12px;
+        display: flex;
+
+        & > p:last-child {
+            margin-left: 36px;
+        }
+    }
+
+    article {
+        color: $text-color-gray;
+        letter-spacing: 0.22px;
+    }
+}
+
+.act-img-wrapper {
+    height: 255px;
+    overflow: hidden;
+    margin: -24px;
+    margin-bottom: 0;
+
+    img {
+        min-height: 300px;
+        object-fit: cover;
+    }
+}
+
+.act-title {
+    color: $text-color-dark;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.read-more-btn {
+    border: 0;
+    color: #fff;
+    background-color: $primary-color;
+    border-radius: 4px;
+    padding: 6px 14px;
+    margin-top: 24px;
+    outline: none;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
