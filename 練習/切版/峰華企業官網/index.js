@@ -1,4 +1,3 @@
-
 /**
  * 輪播圖
  */
@@ -54,20 +53,14 @@ function useGlide() {
 function useHeader() {
     const headerEl = document.querySelector("header");
     const scrollTop = document.querySelector(".scrollTop");
+
+    document.addEventListener("scrollStart", () => {
+        if (headerEl.classList.contains("open")) {
+            headerEl.classList.remove("open");
+        }
+    });
+
     window.addEventListener("scroll", () => {
-
-        // const topOfHeader = headerEl.offsetTop;
-        // console.log(topOfHeader,window.scrollY);
-
-        // if(window.screenY >= topOfHeader){
-        //     document.body.style.paddingTop = headerEl.offsetHeight + 'px';
-        //     headerEl.classList.add("sticky");
-        // }
-        // else{
-        //     headerEl.classList.remove("sticky");
-        //     document.body.style.paddingTop = 0;
-        // }
-
         headerEl.classList.toggle("sticky", window.pageYOffset >= 100);
         if (window.pageYOffset >= 100) {
             document.querySelector(".glide").style.top = "0";
