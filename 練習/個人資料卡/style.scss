@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+$primary-color: #71b3dd;
+$primary-dark-color: #4489b5;
+$text-color-gray: #8b979f;
+$text-color-light-gray: #c1c7cb;
+$text-color-dark-gray: #5a6f7c;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: "Raleway", "微軟正黑體";
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-card {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 12px;
+
+    width: 627px;
+    height: 374px;
+    box-shadow: 0 0 22px 3px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    grid-column: 8 / 13;
+    max-width: 238px;
+    height: 100%;
+    overflow: hidden;
+
+    align-self: start;
+    justify-self: end;
+
+    img {
+        width: 130%;
+        object-fit: cover;
+        -webkit-user-drag: none;
+    }
+}
+
+.content {
+    grid-column: 1 / 8;
+    padding: 38px 28px 20px 33px;
+    position: relative;
+
+    section {
+        position: absolute;
+        display: none;
+        transition: 0.3s ease-out;
+
+        &.active-section {
+            // opacity: 1;
+            display: block;
+        }
+    }
+}
+
+nav {
+    margin-bottom: 24px;
+    display: flex;
+    position: relative;
+
+    a {
+        color: $text-color-gray;
+        text-decoration: none;
+
+        &.active {
+            color: $primary-dark-color;
+        }
+
+        // 非最後一個的元素
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+
+    .indicator {
+        height: 2px;
+        background: $primary-dark-color;
+        position: absolute;
+        bottom: -7px;
+        left: 0;
+        transition: 0.4s;
+    }
+}
+
+.personal-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title {
+    h1 {
+        font-size: 2em;
+        font-weight: 500;
+    }
+
+    p {
+        color: $text-color-gray;
+        margin: 6px 0 18px 0;
+    }
+}
+
+.follow-btn {
+    background-color: $primary-color;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 0 27px;
+    height: 30px;
+    line-height: 30px;
+    transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    justify-self: end;
+    align-self: center;
+
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $primary-dark-color;
+    }
+
+    .fa {
+        font-size: 10px;
+        padding-right: 5px;
+    }
+}
+
+.about-me {
+    color: $text-color-dark-gray;
+    font-weight: 300;
+
+    // 文字左右對齊
+    text-align: justify;
+}
+
+footer {
+    margin-top: 120px;
+
+    ul {
+        display: flex;
+
+        li {
+            list-style: none;
+
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    .fa {
+        color: $primary-color;
+        font-size: 24px;
+
+        &:hover {
+            color: $primary-dark-color;
+        }
+    }
+}
+
+.work-exps {
+    color: $text-color-gray;
+    display: grid;
+    grid-template-rows: repeat(3, minmax(80px, auto));
+}
+
+.work-exp-item{
+    display: grid;
+    grid-template-columns: 5fr 1fr 7fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.position{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.separator{
+    height: 43px;
+    position: relative;
+    left: 10px;
+    border-left: 2px dotted #eaeff2;
+}
+
+.time{
+    color: $text-color-light-gray;
+}
+
+.company{
+    font-size: 14px;
+    color: $text-color-dark-gray;
+    margin-top: 9px;
+}
